@@ -1,4 +1,8 @@
 import { Component } from '@angular/core';
+import { ActionSheetController } from '@ionic/angular';
+
+
+
 
 @Component({
   selector: 'app-tab1',
@@ -6,7 +10,48 @@ import { Component } from '@angular/core';
   styleUrls: ['tab1.page.scss']
 })
 export class Tab1Page {
+  today;
 
-  constructor() {}
+  constructor(public actionSheetController: ActionSheetController) {
+    this.today = new Date().toISOString();
+  }
 
+  async presentActionSheet(event: Event) {
+    const actionSheet = await this.actionSheetController.create({
+    
+      buttons: [{
+        text: 'Mark completed',
+        role: 'destructive',
+        // cssClass: 'actionButton',
+  
+        handler: () => {
+          console.log('Delete clicked');
+        }
+      }, {
+        text: 'Edit',
+        cssClass: 'actionButton',
+        handler: () => {
+          console.log('Share clicked');
+        }
+      }, {
+        text: 'Create New Task',
+        cssClass: 'actionButton',
+        
+        handler: () => {
+          console.log('Play clicked');
+        }
+      },  {
+        text: 'Cancel',
+        cssClass: 'cancelButton',
+       
+        role: 'cancel',
+        handler: () => {
+          console.log('Cancel clicked');
+        }
+      }]
+    });
+    
+    await actionSheet.present();
+    
+  }
 }

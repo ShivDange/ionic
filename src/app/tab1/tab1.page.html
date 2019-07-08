@@ -1,41 +1,122 @@
-<ion-header>
-  <ion-toolbar>
-    <ion-title>
-      Tab One
+
+<ion-header >
+  
+  <ion-toolbar class="new-background-color">
+      
+    <ion-title class = "new-color"  align = "center" >
+        <ion-icon  name="add-circle-outline" class = "other plus-ico" ></ion-icon>
+        <span class="appText">
+          Appointments
+        </span >
+       
+        <span style="float: right" >
+          <img src="../../assets/images/hamburger.png"  width="30" height="30" > 
+        </span>
+ 
     </ion-title>
   </ion-toolbar>
+  <div class="forDate">
+      <ion-icon name="ios-arrow-back" class="arrow-left"></ion-icon>
+     <ion-item lines="none">
+        
+        <ion-datetime class="dateField"
+           [(ngModel)] = 'today'
+          [dayShortNames]="customDayShortNames"
+          displayFormat="DDD MMM D"
+
+          monthShortNames="jan, feb, mar, apr, may, jun, jul, aug, sep, oct, nov, dec"></ion-datetime>
+          <ion-label><img src="../../assets/images/date_icon.png"  width="20" height="20" ></ion-label>
+        </ion-item>
+        <!-- <ion-icon name="ios-arrow-forward" class="arrow-right"></ion-icon> -->
+
+
+  </div>
 </ion-header>
 
+
+
+ 
+
+
 <ion-content>
-    <ion-card class="welcome-card">
-      <ion-img src="/assets/shapes.svg"></ion-img>
-      <ion-card-header>
-        <ion-card-subtitle>Get Started</ion-card-subtitle>
-        <ion-card-title>Welcome to Ionic</ion-card-title>
-      </ion-card-header>
-      <ion-card-content>
-        <p>Now that your app has been created, you'll want to start building out features and components. Check out some of the resources below for next steps.</p>
-      </ion-card-content>
-    </ion-card>
-    <ion-list lines="none">
-      <ion-list-header>
-        <ion-label>Resources</ion-label>
-      </ion-list-header>
-      <ion-item href="https://ionicframework.com/docs/">
-        <ion-icon slot="start" color="medium" name="book"></ion-icon>
-        <ion-label>Ionic Documentation</ion-label>
-      </ion-item>
-      <ion-item href="https://ionicframework.com/docs/building/scaffolding">
-        <ion-icon slot="start" color="medium" name="build"></ion-icon>
-        <ion-label>Scaffold Out Your App</ion-label>
-      </ion-item>
-      <ion-item href="https://ionicframework.com/docs/layout/structure">
-        <ion-icon slot="start" color="medium" name="grid"></ion-icon>
-        <ion-label>Change Your App Layout</ion-label>
-      </ion-item>
-      <ion-item href="https://ionicframework.com/docs/theming/basics">
-        <ion-icon slot="start" color="medium" name="color-fill"></ion-icon>
-        <ion-label>Theme Your App</ion-label>
-      </ion-item>
-    </ion-list>
+  <div class="calender-sub">
+    <span class="cal-left">Calender View</span>
+    <span style="text-align: center;display: inline-block;">My Schedule <ion-icon ios="ios-search" md="md-search"></ion-icon></span>
+
+  </div>
+  <!-- <ion-card class="cardContent">
+    <ion-card-header>
+      Header
+    </ion-card-header>
+    <ion-card-content>
+      The British use the term "header", but the American term "head-shot" the English simply refuse to adopt.
+    </ion-card-content>
+  </ion-card> -->
+   <!-- <button class="btn btn-primary" data-target="#my-collapse" data-toggle="collapse" aria-expanded="false" aria-controls="my-collapse">Text</button>
+  <div id="my-collapse" class="collapse">
+    Lorem ipsum dolor sit amet consectetur adipisicing elit. Ex alias animi, dolorem eos mollitia quo laudantium ducimus, est et nisi deserunt obcaecati distinctio commodi harum porro molestias expedita libero atque?
+    Lorem ipsum dolor sit amet consectetur adipisicing elit. Similique, et quidem quaerat debitis sint, placeat qui, quasi doloremque reprehenderit in eveniet cumque error soluta provident! Quisquam, dolorem repellendus. Omnis, odit.
+  </div> -->
+  <div class="cardStyling">
+    <div class="container">
+  <div id="accordion">
+    <div class="card">
+      <!-- <div class="card-header">
+        <a class="card-link" data-toggle="collapse" href="#collapseOne">
+          Collapsible Group Item #1
+        </a>
+      </div> -->
+      
+      
+      <a class="card-link" data-toggle="collapse" href="#collapseOne" id="cardCollapse">
+          <span class="text-left" style="float: left ; margin-left: 0">
+              <img src="../../assets/patient.png" class="rounded-circle pro-pic" width="50" height="50"> 
+          </span>
+       <span class="cardActivityName "  >Consult 40 min</span> <span class="time"> 4:14 pm</span> <br>test11a 
+      </a>
+      <div id="collapseOne" class="collapse" data-parent="#accordion" data-toggle="collapse" href="#collapseOne">
+        <div class="card-body">
+          <div style="padding-left: 54px ; padding-top: 2px" >
+            <p>JD123
+            <br> Mar 1994 <span class="age"> (M/71)</span> <p>
+              <span>
+                  <img src="../../assets/images/allergy_flag.png"  width="20" height="20" > 
+                  
+                  <img src="../../assets/images/allergy_flag.png"  width="20" height="20" class="iconPosition"> 
+
+                  <img src="../../assets/images/allergy_flag.png"  width="20" height="20" class="iconPosition"> 
+
+                  <img src="../../assets/images/allergy_flag.png"  width="20" height="20" class="iconPosition"> 
+              </span>
+          </div>
+          <div class="departmentDiv">
+            <p class="departmentHeading"> Department:</p>
+            <span>Radition Oncology</span>
+          </div>
+          <div>
+
+         
+          <button ion-button (click)=" $event.preventDefault();presentActionSheet()" class="button btn btn-primary dropdown-toggle action-btn">Action</button>
+        </div>
+        </div>
+      </div>
+    </div>
+
+    </div>
+  
+ </div>
+<!-- new Card Div -->
+
+<!-- <div id="accordion1">
+    <div class="card"> -->
+        <!-- <a class="card-link" data-toggle="collapse" href="#collapseOne1" id="cardCollapse1">
+            <span class="text-left" style="float: left ; margin-left: 0">
+                <img src="../../assets/patient.png" class="rounded-circle" width="50" height="50"> 
+            </span> -->
+<!-- 
+</div>
+</div> -->
+  <!-- End Dic Card -->
+  </div>
 </ion-content>
+
